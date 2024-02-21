@@ -6,7 +6,7 @@ const https = require('https');
 
 const guildID = "755793441287438469";
 const channelID = "1209744011938758696";
-const url = ["https://selfvoice.onrender.com", "https://selfcall.onrender.com"];
+const url = ["https://selfvoice.onrender.com", "https://music-bot-rnno.onrender.com"];
 
 if (isMainThread) {
   // Main thread code
