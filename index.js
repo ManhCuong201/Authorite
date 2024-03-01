@@ -5,7 +5,7 @@ const { Worker, isMainThread, parentPort } = require('worker_threads');
 const https = require('https');
 
 const guildID = "755793441287438469";
-const channelID = "1209744011938758696";
+const channelID = "1213027053461577798";
 const url = ["https://selfvoice.onrender.com", "https://music-bot-rnno.onrender.com"];
 
 if (isMainThread) {
@@ -49,7 +49,9 @@ client.on("ready", async () => {
   const guild = await client.guilds.fetch(guildID)
   const member = await guild.members.fetch(client.user.id);
   if(!member.voice.channel) {
-    await joinVC(client);
+    await joinVC(client).catch(err => {
+          console.log(err);
+        });
   }
 });
 
@@ -71,7 +73,9 @@ client.on("voiceStateUpdate", async (oldState, newState) => {
   if(!client.voice.channel) {
     if (oldState.member.id !== client.user.id) return;
     if(!newVoice) {
-        await joinVC(client);
+        await joinVC(client).catch(err => {
+          console.log(err);
+        });
     }
   }
 });
