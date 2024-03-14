@@ -13,7 +13,7 @@ if (isMainThread) {
   // Create an array to store worker threads
   const workerThreads = [];
   // Create a number of worker threads and add them to the array
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 3; i++) {
     workerThreads.push(new Worker(__filename));
   }
   // Send a message to each worker thread with a task to perform
